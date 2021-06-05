@@ -1,0 +1,22 @@
+Coroutines는 비동기 코드를 더 관용적으로 사용하게 해주는 코틀린 언어의 새 특징이다.
+이건 또한 보통 프로젝트에서 동기적으로 짠 코드를같은 방법으로 비 동기 코드로 짤 수 있다는 것을 의미한다.
+
+이미, 다른 프로젝트(mvvm_retrofit_recyclerview)에서 MVVM에 세부 사항에 대해 설명했다.
+이 포스트에서 MVVM의 더 나은 이해를 확인해보자. Coroutines과 retrofit 작업을 중점적으로!
+
+viewModel 내 retrofit 을 가진 Coroutines에 대한 흐름 다이어그램이다.
+                                              -> suspend_Remote Data Source(Retrofit)
+View -> LiveData_ViewModel -> Flow_Retrofit --
+                                              -> suspend_Local Data Source(Room)
+
+Coroutines 는 두 가지 주요 문제를 도와준다.
+1. 메인 쓰레드를 블록할 수 있는 긴 실행 작업
+2. 주요 안전 기능을 사용하면 모든 suspend function(일시 중단 기능)을 메인 스레드에서 호출 할 수 있습니다.
+
+코루틴에 대한 자세한건 해당 url(https://kotlinlang.org/docs/coroutines-overview.html#experimental-status-of-coroutines)을 참고하자.
+
+
+
+
+
+참고한 url : https://medium.com/android-beginners/mvvm-with-kotlin-coroutines-and-retrofit-example-d3f5f3b09050
