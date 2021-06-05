@@ -1,0 +1,27 @@
+MVVM 아키텍쳐는 Model-View-ViewModel 아키텍처로, 각 컴포넌트 사이에 강한 커플링을 제거한다.
+이 아키텍쳐에서 가장 중요한 것은, 자식은 부모를 직접 참조하지 못하며, 오직 관찰자로(observable)에 의해서만 참조할 수 있다.
+
+Model
+- 어플리케이션의 데이터를 보유한다.
+- 뷰에게 직접 말할 수 없다.
+- 일반적으로, Observables를 통해 ViewModel에 데이터를 노출시키는 것을 추천한다.
+
+View
+- 어플리케이션 로직이 없는 어플리케이션의 UI를 표현한다.
+- ViewModel 을 관찰한다.
+
+ViewModel
+- Model과 View 사이의 연결로서 동작한다.
+- Model에서 데이터를 변화하는 것에 대한 책임이 있다.
+- View에 데이터 흐름을 제공한다.
+- View를 업데이트하기 위해 훅(hooks) 또는 콜백(callbacks)을 사용한다.
+- Model에 데이터에 대해 묻는다.
+
+뷰모델에 대해 더 알고 싶다면, 해당 url(https://developer.android.com/reference/android/arch/lifecycle/ViewModel) 을 참고하자.
+
+Data Layer 설정
+데이터 레이어에서, 데이터에 대한 모델을 준비해야만 하며, API 호출을 구현해야만 한다.
+이 예제에서, 데이터를 다루기 위해 Repository 패턴을 사용한다.
+
+
+참고 url : https://howtodoandroid.com/mvvm-retrofit-recyclerview-kotlin/

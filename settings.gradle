@@ -1,3 +1,4 @@
+include ':mvvm_retrofit_recyclerview'
 include ':mvvm_coroutines_retrofit'
 include ':app'
 rootProject.name = "SampleMVVM"
